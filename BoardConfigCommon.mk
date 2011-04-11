@@ -1,9 +1,6 @@
-USE_CAMERA_STUB := true
+USE_CAMERA_STUB := false
 BOARD_USE_FROYO_LIBCAMERA := true
 BOARD_FIRST_CAMERA_FRONT_FACING := true
-
-# inherit from the proprietary version
--include vendor/nvidia/harmony/BoardConfigVendor.mk
 
 TARGET_BOARD_PLATFORM := tegra
 TARGET_CPU_ABI := armeabi-v7a
@@ -19,7 +16,7 @@ TARGET_USE_SOFTWARE_AUDIO_AAC := true
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 
 # custom recovery ui
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/nvidia/harmony/recovery/recovery_ui.c
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/malata/smb-common/recovery/recovery_ui.c
 
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := harmony
@@ -51,7 +48,7 @@ BOARD_USE_KINETO_COMPATIBILITY := true
 # EGL config 
 TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 BOARD_NO_RGBX_8888 := true
-BOARD_EGL_CFG := device/nvidia/harmony/egl.cfg
+BOARD_EGL_CFG := device/malata/smb-common/egl.cfg
 
 # fix this up by examining /proc/mtd on a running device
 # dev:    size   erasesize  name
@@ -74,8 +71,6 @@ BOARD_HAS_NO_MISC_PARTITION := true
 # Indicate that the board has an Internal SD Card
 BOARD_HAS_SDCARD_INTERNAL := true
 
-TARGET_PREBUILT_KERNEL := device/nvidia/harmony/kernel
-
 # Below is a sample of how you can tweak the mount points using the board config.
 # This is for the Samsung Galaxy S.
 # Feel free to tweak or remove this code.
@@ -88,10 +83,3 @@ BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk2p1
 BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk3p1
 BOARD_SDCARD_DEVICE_INTERNAL := /dev/block/mmcblk3p1
 BOARD_SDEXT_DEVICE := /dev/block/mmcblk2p2
-#BOARD_HAS_DATADATA := true
-#BOARD_DATADATA_DEVICE := /dev/block/stl10
-#BOARD_DATADATA_FILESYSTEM := auto
-#BOARD_DATADATA_FILESYSTEM_OPTIONS := llw,check=no,nosuid,nodev
-#BOARD_SYSTEM_DEVICE := /dev/block/stl9
-#BOARD_SYSTEM_FILESYSTEM := auto
-#BOARD_SYSTEM_FILESYSTEM_OPTIONS := llw,check=no
