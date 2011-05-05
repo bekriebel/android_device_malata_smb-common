@@ -2,7 +2,8 @@ $(call inherit-product, build/target/product/full_base.mk)
 
 # Get a proper init file
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.harmony.rc:root/init.harmony.rc
+    $(LOCAL_PATH)/init_recovery.rc:root/init_recovery.rc \
+    $(LOCAL_PATH)/init.nvidia.rc:root/init.nvidia.rc
 
 # Place wifi files
 PRODUCT_COPY_FILES += \
